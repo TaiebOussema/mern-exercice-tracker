@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 const uri = process.env.MONGO_CONN_URI;
-mongoose.connect(uri, {useNewUrlParser : true, useUnifiedTopology : true}, (err) => {
+mongoose.connect(uri, {useNewUrlParser : true, useUnifiedTopology : true, useCreateIndex : true}, (err) => {
     if (!err) {console.log("CONNECTION ESTABLISHED ! ")}
     else {console.log("CANNOT ESTABLISH CONNECTION " + err)};
 });
